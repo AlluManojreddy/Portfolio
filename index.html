@@ -1,182 +1,1263 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manoj Reddy | Python Backend Developer | Data Engineer | Data Analyst</title>
+<title>Manoj Reddy | Python Backend Developer | Data Engineer</title>
 
-    <!-- SEO -->
-    <meta name="description"
-        content="Portfolio of Manoj Reddy - Python Backend Developer, Data Engineer and Data Analyst specializing in Python, FastAPI, REST APIs, SQL, ETL pipelines, data analytics, Google Cloud Platform and Microsoft Azure fundamentals." />
+<meta name="description" content="Manoj Reddy's professional portfolio - Python Backend Developer, Data Engineer and Data Analyst. Skills in Python, FastAPI, SQL, GCP, Azure, ETL and Data Analytics.">
 
-    <meta name="keywords"
-        content="Python Backend Developer, Backend Developer, Data Engineer, Data Analyst, Python, FastAPI, Node.js, REST APIs, SQL, PostgreSQL, MySQL, MongoDB, ETL, PySpark, Apache Spark, Kafka, Airflow, Power BI, Looker Studio, GCP, Azure" />
+<meta name="keywords" content="Python Backend Developer, Python, FastAPI, REST API, Data Engineer, Data Analyst, SQL, GCP, Azure, PySpark, BigQuery">
 
-    <meta name="author" content="Manoj Reddy" />
+<meta name="author" content="Manoj Reddy">
 
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --bg: #080b12;
+    --surface: #101622;
+    --surface2: #151e2d;
+    --text: #f1f5f9;
+    --muted: #a1adbd;
+    --accent: #55e6c1;
+    --accent2: #64a9ff;
+    --border: rgba(255,255,255,0.10);
+    --max: 1150px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: min(90%, var(--max));
+    margin: auto;
+}
+
+section {
+    padding: 95px 0;
+    scroll-margin-top: 80px;
+}
+
+/* NAVIGATION */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8,11,18,0.90);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    width: min(90%, var(--max));
+    margin: auto;
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.menu-btn {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* HERO */
+
+#home {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 120px;
+    position: relative;
+    overflow: hidden;
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(85,230,193,0.10);
+    filter: blur(130px);
+    border-radius: 50%;
+    top: 15%;
+    right: -100px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 12px var(--accent);
+}
+
+.hero-content h1 {
+    font-size: clamp(42px, 7vw, 82px);
+    line-height: 1.12;
+    letter-spacing: -4px;
+    font-weight: 800;
+}
+
+.hero-content h1 span {
+    color: var(--accent);
+}
+
+.hero-role {
+    margin-top: 16px;
+    font-size: clamp(19px, 3vw, 28px);
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.hero-description {
+    max-width: 700px;
+    margin-top: 25px;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 23px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #07120f;
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(85,230,193,0.2);
+}
+
+.btn-outline {
+    border: 1px solid var(--border);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: translateY(-4px);
+}
+
+.hero-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.hero-tags span {
+    padding: 7px 13px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+}
+
+/* COMMON */
+
+.section-label {
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.section-heading {
+    font-size: clamp(30px, 5vw, 43px);
+    letter-spacing: -1.5px;
+    margin-bottom: 18px;
+}
+
+.section-intro {
+    color: var(--muted);
+    max-width: 720px;
+    margin-bottom: 38px;
+}
+
+.alt-section {
+    background: #0c111b;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr;
+    gap: 55px;
+    align-items: center;
+}
+
+.profile-card {
+    min-height: 350px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #17283a, #101622);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+.profile-placeholder {
+    font-size: 100px;
+    color: var(--accent);
+}
+
+.about-text p {
+    color: var(--muted);
+    margin-bottom: 17px;
+    font-size: 15px;
+}
+
+.about-facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+    margin-top: 25px;
+}
+
+.fact {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.fact strong {
+    display: block;
+    font-size: 13px;
+    color: var(--accent);
+}
+
+.fact span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* SKILLS */
+
+.skill-group {
+    margin-top: 35px;
+}
+
+.skill-group h3 {
+    font-size: 19px;
+    margin-bottom: 17px;
+}
+
+.skill-group h3 i {
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+}
+
+.skill {
+    padding: 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.skill i {
+    font-size: 21px;
+    color: var(--accent);
+    margin-bottom: 9px;
+}
+
+.skill h4 {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.skill p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+/* EXPERIENCE */
+
+.timeline {
+    border-left: 2px solid rgba(85,230,193,0.4);
+    margin-left: 8px;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -39px;
+    top: 30px;
+    width: 14px;
+    height: 14px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+}
+
+.timeline-item h3 {
+    font-size: 20px;
+}
+
+.company {
+    color: var(--accent);
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.date {
+    display: inline-block;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin: 10px 0;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.timeline-item li {
+    margin: 7px 0;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    padding: 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.project-number {
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+}
+
+.project-card h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    margin: 13px 0;
+}
+
+.project-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tech-stack span {
+    color: var(--accent);
+    background: rgba(85,230,193,0.08);
+    border: 1px solid rgba(85,230,193,0.15);
+    border-radius: 4px;
+    padding: 5px 9px;
+    font-size: 10px;
+    font-family: 'DM Mono', monospace;
+}
+
+/* EDUCATION AND CERTIFICATIONS */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.info-card {
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+}
+
+.info-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.info-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.info-card .highlight {
+    color: var(--accent);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+/* CONTACT */
+
+#contact {
+    text-align: center;
+}
+
+.contact-box {
+    background: linear-gradient(140deg, #132b2b, #101622 65%);
+    border: 1px solid var(--border);
+    padding: 55px 25px;
+    border-radius: 15px;
+}
+
+.contact-box h2 {
+    font-size: clamp(27px, 5vw, 42px);
+    margin-bottom: 15px;
+}
+
+.contact-box p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    width: 45px;
+    height: 45px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--accent);
+    font-size: 19px;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: var(--accent);
+    color: var(--bg);
+    transform: translateY(-4px);
+}
+
+footer {
+    border-top: 1px solid var(--border);
+    padding: 25px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* REVEAL ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #101622;
+        flex-direction: column;
+        align-items: flex-start;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .profile-card {
+        max-width: 350px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 600px) {
+    section {
+        padding: 70px 0;
+    }
+
+    .hero-content h1 {
+        letter-spacing: -2px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-grid,
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-facts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .timeline {
+        padding-left: 22px;
+    }
+
+    .timeline-item {
+        padding: 18px;
+    }
+
+    .timeline-item::before {
+        left: -31px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- LOADER -->
-    <div class="loading">
-        <h1>Manoj Reddy</h1>
-        <div class="progress">
-            <div class="progressbar"></div>
+<!-- NAVIGATION -->
+<header>
+    <nav class="navbar">
+        <a class="logo" href="#home">MANOJ<span>.</span></a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
         </div>
-    </div>
+    </nav>
+</header>
 
-    <!-- CURSOR -->
-    <div id="cursor"></div>
+<main>
 
-    <!-- MAIN CONTAINER -->
+<!-- HERO -->
+<section id="home">
     <div class="container">
+        <div class="hero-content reveal">
 
-        <!-- HOME -->
-        <section id="home">
-
-            <!-- NAVBAR -->
-            <nav id="nav">
-                <h2>PORTFOLIO &copy; 2026</h2>
-
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#education">Education</a>
-                    <a href="#certifications">Certifications</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-
-            <!-- HERO SECTION -->
-            <div class="home-content">
-
-                <h2 class="greeting">
-                    👋 Hi, I'm Manoj Reddy
-                </h2>
-
-                <h1 class="name">
-                    Python Backend Developer
-                </h1>
-
-                <h1 class="title">
-                    & Data Engineer
-                </h1>
-
-                <h1 class="subtitle">
-                    & Data Analyst
-                </h1>
-
-                <p class="hero-description">
-                    Building reliable backend applications and REST APIs with Python,
-                    developing scalable ETL data pipelines,
-                    and transforming business data into actionable insights
-                    using analytics and cloud technologies.
-                </p>
-
-                <!-- BUTTONS -->
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn primary-btn">
-                        View Projects
-                    </a>
-
-                    <a href="./Manoj_Resume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn secondary-btn">
-                        Download Resume
-                    </a>
-                </div>
-
-                <!-- SCROLL -->
-                <div class="scroll">
-                    <h4>Scroll Down</h4>
-                    <i class="fa-solid fa-arrow-down-long arrow"></i>
-                </div>
-
+            <div class="eyebrow">
+                <span class="status-dot"></span>
+                PYTHON • BACKEND • DATA • CLOUD
             </div>
-        </section>
 
-        <!-- DESCRIPTION -->
-        <section id="description">
-            <h1>I build reliable Python backend applications,</h1>
-            <h1>develop scalable data engineering pipelines,</h1>
-            <h1>analyze data and uncover business insights,</h1>
-            <h1>using modern cloud technologies.</h1>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about">
-
-            <h1 class="section-title">
-                - About Me -
+            <h1>
+                Hi, I'm <span>Manoj Reddy.</span>
             </h1>
 
-            <div class="about-me">
+            <div class="hero-role">
+                Python Backend Developer
+            </div>
 
-                <!-- IMAGE -->
-                <div class="left">
-                    <img src="profileImg.jpeg" alt="Manoj Reddy Profile" />
-                </div>
+            <p class="hero-description">
+                I build reliable backend applications and REST APIs using
+                Python, develop scalable data engineering pipelines, and
+                transform business data into meaningful insights.
+                Interested in backend development, cloud technologies,
+                data platforms, and AI-powered applications.
+            </p>
 
-                <!-- CONTENT -->
-                <div class="right">
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Projects <i class="fas fa-arrow-right"></i>
+                </a>
 
-                    <h2>A brief intro, who am I?</h2>
+                <a href="./Manoj_Resume.pdf"
+                   class="btn btn-outline"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <i class="fas fa-file-pdf"></i> View Resume
+                </a>
+            </div>
 
-                    <p>
-                        I am a Computer Science and Engineering graduate
-                        specializing in Artificial Intelligence and Machine
-                        Learning from St. Peter's Engineering College,
-                        Hyderabad, India.
+            <div class="hero-tags">
+                <span>PYTHON</span>
+                <span>FASTAPI</span>
+                <span>REST APIs</span>
+                <span>SQL</span>
+                <span>DATA ENGINEERING</span>
+                <span>GCP</span>
+                <span>AZURE</span>
+            </div>
 
-                        I am a Python Backend Developer with a strong
-                        foundation in server-side development, REST API
-                        development, business logic, and database management.
-                        I also have a technical focus on Data Engineering,
-                        Data Analytics, and Cloud Computing.
-                    </p>
+        </div>
+    </div>
+</section>
 
-                    <p>
-                        My backend development skills include Python, FastAPI,
-                        Node.js, REST APIs, API integration, debugging,
-                        authentication, authorization, PostgreSQL, MySQL,
-                        and MongoDB. My data-focused skills include SQL,
-                        data extraction, data transformation, data cleaning,
-                        ETL/ELT pipelines, exploratory data analysis,
-                        and business intelligence.
-                    </p>
+<!-- ABOUT -->
+<section id="about" class="alt-section">
+    <div class="container">
 
-                    <p>
-                        My Data Engineering toolkit includes PySpark, Apache Spark,
-                        Apache Kafka, Apache Beam, Apache Airflow, and
-                        Databricks. I have exposure to Google Cloud Platform
-                        services including BigQuery, Cloud Storage, Pub/Sub,
-                        Dataflow, Dataproc, and Vertex AI. I also have a
-                        foundation in Microsoft Azure, supported by my
-                        Azure Fundamentals certification.
-                    </p>
+        <div class="section-label">01 / ABOUT ME</div>
+        <h2 class="section-heading">A little about my background.</h2>
 
-                    <p>
-                        For Data Analytics, I use Python, SQL, Pandas, NumPy,
-                        exploratory data analysis, Power BI, Looker Studio,
-                        and Streamlit to process data and communicate
-                        business insights. I also have exposure to AI/ML,
-                        NLP, Generative AI, LLMs, LangChain, and RAG workflows.
-                    </p>
+        <div class="about-grid">
 
+            <div class="profile-card">
+                <img
+                    src="./profileImg.jpeg"
+                    alt="Manoj Reddy"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+
+                <div class="profile-placeholder" style="display:none;">
+                    <i class="fas fa-user-tie"></i>
                 </div>
             </div>
-        </section>
+
+            <div class="about-text">
+
+                <p>
+                    I am a Computer Science and Engineering graduate
+                    specializing in Artificial Intelligence and Machine
+                    Learning from St. Peter's Engineering College,
+                    Hyderabad, India.
+                </p>
+
+                <p>
+                    My primary professional focus is Python Backend
+                    Development. I work with Python, FastAPI, Node.js,
+                    REST APIs, business logic, API integration, debugging,
+                    and database operations using PostgreSQL, MySQL,
+                    and MongoDB.
+                </p>
+
+                <p>
+                    Alongside backend development, I have a strong
+                    technical focus on Data Engineering, including
+                    ETL/ELT, data processing, PySpark, Apache Spark,
+                    Kafka, Airflow, and data warehousing.
+                </p>
+
+                <p>
+                    My analytics toolkit includes Python, SQL, Pandas,
+                    NumPy, exploratory data analysis, Power BI,
+                    and Looker Studio. I have exposure to Google Cloud
+                    services such as BigQuery, Cloud Storage, Pub/Sub,
+                    Dataflow, Dataproc, and Vertex AI, along with
+                    Microsoft Azure Fundamentals.
+                </p>
+
+                <div class="about-facts">
+                    <div class="fact">
+                        <strong>Primary Focus</strong>
+                        <span>Python Backend Development</span>
+                    </div>
+
+                    <div class="fact">
+                        <strong>Secondary Focus</strong>
+                        <span>Data Engineering</span>
+                    </div>
+
+                    <div class="fact">
+                        <strong>Analytics</strong>
+                        <span>SQL, Python, Power BI</span>
+                    </div>
+
+                    <div class="fact">
+                        <strong>Cloud</strong>
+                        <span>GCP & Azure Fundamentals</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+
+        <div class="section-label">02 / TECHNICAL SKILLS</div>
+        <h2 class="section-heading">Technologies I work with.</h2>
+        <p class="section-intro">
+            My technical skills are organized around backend development
+            first, followed by data engineering, cloud technologies,
+            analytics, and AI/ML.
+        </p>
+
+        <!-- BACKEND -->
+        <div class="skill-group">
+            <h3><i class="fas fa-code"></i> Python Backend Development & Databases</h3>
+
+            <div class="skills-grid">
+                <div class="skill"><i class="fab fa-python"></i><h4>Python</h4></div>
+                <div class="skill"><i class="fas fa-bolt"></i><h4>FastAPI</h4></div>
+                <div class="skill"><i class="fab fa-node-js"></i><h4>Node.js</h4></div>
+                <div class="skill"><i class="fas fa-plug"></i><h4>REST APIs</h4></div>
+                <div class="skill"><i class="fas fa-database"></i><h4>PostgreSQL</h4></div>
+                <div class="skill"><i class="fas fa-database"></i><h4>MySQL</h4></div>
+                <div class="skill"><i class="fas fa-leaf"></i><h4>MongoDB</h4></div>
+                <div class="skill"><i class="fab fa-docker"></i><h4>Docker</h4></div>
+                <div class="skill"><i class="fab fa-git-alt"></i><h4>Git & GitHub</h4></div>
+                <div class="skill"><i class="fas fa-paper-plane"></i><h4>Postman</h4></div>
+                <div class="skill"><i class="fas fa-shield-alt"></i><h4>Authentication</h4></div>
+                <div class="skill"><i class="fas fa-terminal"></i><h4>Bash</h4></div>
+            </div>
+        </div>
+
+        <!-- DATA ENGINEERING -->
+        <div class="skill-group">
+            <h3><i class="fas fa-gears"></i> Data Engineering & Big Data</h3>
+
+            <div class="skills-grid">
+                <div class="skill"><i class="fas fa-arrows-rotate"></i><h4>ETL / ELT</h4></div>
+                <div class="skill"><i class="fas fa-fire"></i><h4>PySpark</h4></div>
+                <div class="skill"><i class="fas fa-layer-group"></i><h4>Apache Spark</h4></div>
+                <div class="skill"><i class="fas fa-stream"></i><h4>Apache Kafka</h4></div>
+                <div class="skill"><i class="fas fa-wind"></i><h4>Apache Airflow</h4></div>
+                <div class="skill"><i class="fas fa-diagram-project"></i><h4>Apache Beam</h4></div>
+                <div class="skill"><i class="fas fa-table"></i><h4>Databricks</h4></div>
+                <div class="skill"><i class="fas fa-warehouse"></i><h4>Data Warehousing</h4></div>
+            </div>
+        </div>
+
+        <!-- CLOUD -->
+        <div class="skill-group">
+            <h3><i class="fas fa-cloud"></i> Cloud Technologies – GCP & Microsoft Azure</h3>
+
+            <div class="skills-grid">
+                <div class="skill"><i class="fab fa-google"></i><h4>Google Cloud Platform</h4></div>
+                <div class="skill"><i class="fas fa-database"></i><h4>BigQuery</h4></div>
+                <div class="skill"><i class="fas fa-box"></i><h4>Cloud Storage</h4></div>
+                <div class="skill"><i class="fas fa-tower-broadcast"></i><h4>Pub/Sub</h4></div>
+                <div class="skill"><i class="fas fa-diagram-project"></i><h4>Dataflow</h4></div>
+                <div class="skill"><i class="fas fa-server"></i><h4>Dataproc</h4></div>
+                <div class="skill"><i class="fas fa-brain"></i><h4>Vertex AI</h4></div>
+                <div class="skill"><i class="fab fa-microsoft"></i><h4>Microsoft Azure Fundamentals</h4></div>
+            </div>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="skill-group">
+            <h3><i class="fas fa-chart-line"></i> Data Analytics & Business Intelligence</h3>
+
+            <div class="skills-grid">
+                <div class="skill"><i class="fas fa-database"></i><h4>SQL</h4></div>
+                <div class="skill"><i class="fab fa-python"></i><h4>Python Analytics</h4></div>
+                <div class="skill"><i class="fas fa-table"></i><h4>Pandas</h4></div>
+                <div class="skill"><i class="fas fa-calculator"></i><h4>NumPy</h4></div>
+                <div class="skill"><i class="fas fa-magnifying-glass-chart"></i><h4>EDA</h4></div>
+                <div class="skill"><i class="fas fa-chart-pie"></i><h4>Power BI</h4></div>
+                <div class="skill"><i class="fas fa-chart-column"></i><h4>Looker Studio</h4></div>
+                <div class="skill"><i class="fas fa-chart-area"></i><h4>Streamlit</h4></div>
+            </div>
+        </div>
+
+        <!-- AI -->
+        <div class="skill-group">
+            <h3><i class="fas fa-robot"></i> AI, Machine Learning & Generative AI</h3>
+
+            <div class="skills-grid">
+                <div class="skill"><i class="fas fa-brain"></i><h4>Machine Learning</h4></div>
+                <div class="skill"><i class="fas fa-language"></i><h4>NLP</h4></div>
+                <div class="skill"><i class="fas fa-robot"></i><h4>Generative AI</h4></div>
+                <div class="skill"><i class="fas fa-microchip"></i><h4>LLMs</h4></div>
+                <div class="skill"><i class="fas fa-link"></i><h4>LangChain</h4></div>
+                <div class="skill"><i class="fas fa-magnifying-glass"></i><h4>RAG</h4></div>
+                <div class="skill"><i class="fas fa-flask"></i><h4>Scikit-learn</h4></div>
+                <div class="skill"><i class="fas fa-network-wired"></i><h4>TensorFlow & PyTorch</h4></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="alt-section">
+    <div class="container">
+
+        <div class="section-label">03 / EXPERIENCE</div>
+        <h2 class="section-heading">My professional journey.</h2>
+
+        <div class="timeline">
+
+            <article class="timeline-item">
+                <h3>Backend Developer</h3>
+                <div class="company">Spack Solutions Pvt. Ltd. · Hyderabad</div>
+                <span class="date">October 2026 – Present</span>
+
+                <ul>
+                    <li>Develop and maintain backend application functionalities for web and mobile applications.</li>
+                    <li>Work on server-side components, business logic, API development, and database operations.</li>
+                    <li>Work with SQL and databases to support application data requirements.</li>
+                    <li>Debug application issues and contribute to reliable, maintainable backend code.</li>
+                    <li>Use Git version control as part of the development workflow.</li>
+                </ul>
+            </article>
+
+            <article class="timeline-item">
+                <h3>Backend Developer Intern</h3>
+                <div class="company">Spack Solutions Pvt. Ltd. · Hyderabad</div>
+                <span class="date">January 2026 – September 2026</span>
+
+                <ul>
+                    <li>Assisted in developing backend application components and server-side functionalities.</li>
+                    <li>Developed and tested REST APIs and supported API integration using Postman.</li>
+                    <li>Worked with MySQL, PostgreSQL, and MongoDB databases.</li>
+                    <li>Implemented business logic, database queries, and application data processing.</li>
+                    <li>Supported debugging, authentication, authorization, Git, and GitHub workflows.</li>
+                </ul>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+
+        <div class="section-label">04 / PROJECTS</div>
+        <h2 class="section-heading">Selected technical projects.</h2>
+        <p class="section-intro">
+            Projects covering backend application development,
+            AI-powered automation, data engineering, and cloud analytics.
+        </p>
+
+        <div class="project-grid">
+
+            <article class="project-card">
+                <div class="project-number">PROJECT 01 / BACKEND</div>
+
+                <h3>Scalable Backend Application and Data Processing Platform</h3>
+
+                <p>
+                    Developed backend application components and REST API
+                    services to process application requests, business data,
+                    and database operations. Implemented data ingestion,
+                    validation, transformation, and storage using Python,
+                    SQL, and database technologies. Integrated PostgreSQL,
+                    MySQL, and MongoDB to manage relational and
+                    semi-structured data.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>Node.js</span>
+                    <span>REST API</span>
+                    <span>PostgreSQL</span>
+                    <span>MySQL</span>
+                    <span>MongoDB</span>
+                    <span>Docker</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">PROJECT 02 / AI & BACKEND</div>
+
+                <h3>AI-Powered Customer Support and Data Automation Platform</h3>
+
+                <p>
+                    Built an AI-supported workflow for processing customer
+                    queries and support tickets. Applied text preprocessing,
+                    sentiment analysis, issue classification, and LLM-based
+                    workflows for ticket summarization and contextual
+                    responses. Used PostgreSQL and Streamlit dashboards
+                    to organize and review support metrics.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>FastAPI</span>
+                    <span>OpenAI API</span>
+                    <span>LangChain</span>
+                    <span>NLP</span>
+                    <span>Hugging Face</span>
+                    <span>PostgreSQL</span>
+                    <span>Streamlit</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-number">PROJECT 03 / DATA ENGINEERING & CLOUD</div>
+
+                <h3>AI-Driven Data Engineering and Cloud Analytics Platform on GCP</h3>
+
+                <p>
+                    Designed a cloud-based data workflow for batch and
+                    streaming ingestion, processing, transformation, and
+                    analytics. Used Cloud Storage and Pub/Sub for ingestion,
+                    Dataflow and Dataproc for processing, PySpark for
+                    transformations, BigQuery for analytical queries,
+                    and Looker Studio for KPI dashboards. Used Airflow
+                    for workflow orchestration.
+                </p>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>GCP</span>
+                    <span>BigQuery</span>
+                    <span>Cloud Storage</span>
+                    <span>Pub/Sub</span>
+                    <span>Dataflow</span>
+                    <span>Dataproc</span>
+                    <span>PySpark</span>
+                    <span>Airflow</span>
+                    <span>Looker Studio</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="alt-section">
+    <div class="container">
+
+        <div class="section-label">05 / EDUCATION</div>
+        <h2 class="section-heading">Academic background.</h2>
+
+        <div class="info-grid">
+
+            <article class="info-card">
+                <h3>B.Tech – Computer Science and Engineering (AI & ML)</h3>
+                <p>St. Peter's Engineering College, Hyderabad</p>
+                <div class="highlight">2021 – 2025 · CGPA: 8.5</div>
+            </article>
+
+            <article class="info-card">
+                <h3>Intermediate</h3>
+                <p>Bhavans Sri Aurobindo Junior College</p>
+                <div class="highlight">2019 – 2021 · 88%</div>
+            </article>
+
+            <article class="info-card">
+                <h3>Secondary Education</h3>
+                <p>St. Peter's Grammar School</p>
+                <div class="highlight">2019 · CGPA: 9.5</div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+    <div class="container">
+
+        <div class="section-label">06 / CERTIFICATIONS</div>
+        <h2 class="section-heading">Certifications & learning.</h2>
+
+        <div class="info-grid">
+
+            <article class="info-card">
+                <h3><i class="fab fa-google" style="color:var(--accent)"></i> Google Cloud Data Analytics</h3>
+                <p>Google</p>
+                <div class="highlight">2024</div>
+            </article>
+
+            <article class="info-card">
+                <h3><i class="fas fa-cloud" style="color:var(--accent)"></i> Cloud Computing Fundamentals</h3>
+                <p>Google</p>
+                <div class="highlight">2024</div>
+            </article>
+
+            <article class="info-card">
+                <h3><i class="fab fa-microsoft" style="color:var(--accent)"></i> Microsoft Azure Fundamentals</h3>
+                <p>Microsoft</p>
+                <div class="highlight">2024</div>
+            </article>
+
+            <article class="info-card">
+                <h3><i class="fab fa-python" style="color:var(--accent)"></i> Python Essentials</h3>
+                <p>Cisco</p>
+                <div class="highlight">2024</div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="alt-section">
+    <div class="container">
+
+        <div class="contact-box">
+
+            <div class="section-label">07 / CONTACT</div>
+
+            <h2>Let's connect and build something.</h2>
+
+            <p>
+                I am interested in Python Backend Development,
+                Data Engineering, Data Analytics, Cloud Technologies,
+                and AI-driven application development.
+                Feel free to reach out.
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:manojallu1122@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+                <a href="tel:+919666655744" aria-label="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/allu-manoj-reddy-8a68592a4/"
+                   target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+
+                <a href="https://github.com/AlluManojreddy"
+                   target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+
+            </div>
+
+            <div style="margin-top:25px;color:var(--muted);font-size:13px;">
+                <a href="mailto:manojallu1122@gmail.com">
+                    manojallu1122@gmail.com
+                </a>
+                &nbsp; | &nbsp;
+                +91 96666 55744
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        © 2026 Manoj Reddy. Built with HTML, CSS & JavaScript.
+    </div>
+</footer>
+
+<script>
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const icon = menuBtn.querySelector("i");
+
+    if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+    } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+    }
+});
+
+// Close mobile navigation after selecting a link
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.querySelector("i").classList.remove("fa-times");
+        menuBtn.querySelector("i").classList.add("fa-bars");
+    });
+});
+
+// Scroll reveal animation
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12
+});
+
+document.querySelectorAll(".reveal, .skill-group, .timeline-item, .project-card, .info-card")
+    .forEach(element => {
+        element.classList.add("reveal");
+        observer.observe(element);
+    });
+</script>
+
+</body>
+</html>
